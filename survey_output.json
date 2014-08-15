@@ -18,8 +18,7 @@
             "items" : {
                 "$ref" : "http://surveyman.github.io/Schemata/survey_block.json#block"
             },
-            "required" : [ "id" ]
         }
     },
-    "required" : ["survey", "breakoff", "filename"]
+    "required" : ["survey", "filename"]
 }
