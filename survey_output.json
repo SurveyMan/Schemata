@@ -1,5 +1,5 @@
 {
-    "$schema" : "http://json-schema.org/draft-04/schema#",
+    "$schema" : "http://json-schema.org/schema#",
     "type" : "object",
     "id" : "#survey_output",
     "title" : "JSON schema for SurveyMan output",
@@ -18,7 +18,7 @@
             "type" : "array",
             "items" : {
                 "$ref" : "http://surveyman.github.io/Schemata/survey_block.json#block"
-            },
+            }
         }
     },
     "required" : ["survey", "filename"]
