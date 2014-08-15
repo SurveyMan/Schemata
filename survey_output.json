@@ -16,7 +16,7 @@
             "description" : "The survey content. This essentially an array of blocks",
             "type" : "array",
             "items" : {
-                "$ref" : "resource:schemata/survey_block.json#block"
+                "$ref" : "/survey_block.json#block"
             },
             "required" : [ "id" ]
         }
