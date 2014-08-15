@@ -1,6 +1,6 @@
 {
-    "id" : "http://surveyman.github.io/Schemata#",
     "$schema" : "http://json-schema.org/draft-04/schema#",
+    "id" : "#survey_output",
     "title" : "JSON schema for SurveyMan output",
     "description" : "This is the schema to be passed between a library or runtime system to the survey host. The JSON object will be interpreteed by the SurveyMan JS library",
     "properties" : {
