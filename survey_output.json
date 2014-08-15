@@ -17,7 +17,9 @@
             "description" : "The survey content. This essentially an array of blocks",
             "type" : "array",
             "items" : {
-                "$ref" : "http://surveyman.github.io/Schemata/survey_block.json#block"
+                "type" : {
+                    "$ref" : "http://surveyman.github.io/Schemata/survey_block.json#block"
+                }
             }
         }
     },
