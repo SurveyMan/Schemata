@@ -23,5 +23,5 @@
         },
         "randomize" : {"type" : "boolean"}
     },
-    "required" : ["id"] //would like at least one of subblocks or questions
+    "required" : ["id"] 
 }
