@@ -10,7 +10,7 @@
         },
         "subblocks" : {
             "description" : "The list of blocks whose parent is this block",
-            "type" : "array"
+            "type" : "array",
             "items" : {
                 "$ref" : "#block"
             }
