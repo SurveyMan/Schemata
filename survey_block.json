@@ -1,5 +1,5 @@
 {
-    "$schema" : "http://json-schema.org/schema#",
+//    "$schema" : "http://json-schema.org/schema#",
     "description" : "The block JSON.",
     "type" : "object",
     "id" : "http://surveyman.github.io/Schemata/survey_block.json#block",
