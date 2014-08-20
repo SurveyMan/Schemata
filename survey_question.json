@@ -16,11 +16,11 @@
             "description" : "The list of options associated with this question",
             "type" : "array",
             "items" : {
-                "$ref" : "resource:schemata/survey_option.json#option"
+                "$ref" : "http://surveyman.github.io/Schemata/survey_option.json#option"
             }
         },
         "branchMap" : {
-            "$ref" : "resource:schemata/survey_branchMap.json#branchMap"
+            "$ref" : "http://surveyman.github.io/Schemata/survey_branchMap.json#branchMap"
         },
         "freetext" : {
             "type" : "object",

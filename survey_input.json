@@ -7,7 +7,7 @@
         "description" : "The survey object",
         "type" : "array",
         "items" : {
-            "$ref" : "resource:schemata/survey_block.json#block"
+            "$ref" : "http://surveyman.github.io/Schemata/survey_block.json#block"
         }
     }
     "correlation" : {
