@@ -26,6 +26,10 @@
             "type" : "object",
             "description" : "The freetext object can be a boolean value or a string representing the default value, or a regex"
         },
+        "answer" : {
+            "type" : "string",
+            "description" : "The id of the correct answer for this question. It should be a valid Option Id present in the options properties."
+        },
         "randomize" : { "type" : "boolean" },
         "ordered" : { "type" : "boolean" },
         "exclusive" : { "type" : "boolean" },
