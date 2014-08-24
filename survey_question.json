@@ -27,7 +27,7 @@
             "description" : "The freetext object can be a boolean value or a string representing the default value, or a regex",
             "oneOf" : [
                 { "type" : "boolean"},
-                { "type" : "string", "pattern" : "\#\{.*\}"},
+                { "type" : "string", "pattern" : "#\{.*\}"},
                 { "type" : "string"}
             ]
         },
