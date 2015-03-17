@@ -2,7 +2,7 @@
     "$schema" : "http://json-schema.org/schema#",
     "description" : "The block JSON.",
     "type" : "object",
-    "id" : "http://surveyman.github.io/Schemata/survey_output.json#block",
+    "id" : "http://surveyman.github.io/Schemata/survey_block.json#block",
     "properties" : {
         "id" : {
             "description" : "The id generated for this block by the source program",
