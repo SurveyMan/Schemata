@@ -2,7 +2,7 @@
     "$schema" : "http://json-schema.org/schema#",
     "description" : "The block JSON.",
     "type" : "object",
-    "id" : "#block",
+    "id" : "#/block",
     "properties" : {
         "id" : {
             "description" : "The id generated for this block by the source program",
