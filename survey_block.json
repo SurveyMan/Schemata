@@ -2,7 +2,7 @@
     "$schema" : "http://json-schema.org/schema#",
     "description" : "The block JSON.",
     "type" : "object",
-    "id" : "http://surveyman.github.io/Schemata/survey_block.json#block",
+    "id" : "#block",
     "properties" : {
         "id" : {
             "description" : "The id generated for this block by the source program",
@@ -12,14 +12,14 @@
             "description" : "The list of blocks whose parent is this block",
             "type" : "array",
             "items" : {
-                "$ref" : "#"
+                "$ref" : "#block"
             }
         },
         "questions" : {
             "description" : "The list of questions belonging to this block",
             "type" : "array",
             "items" : {
-                "$ref" : "http://surveyman.github.io/Schemata/survey_question.json"
+                "$ref" : "http://surveyman.github.io/Schemata/survey_question.json#question"
             }
         },
         "randomize" : {"type" : "boolean"}
