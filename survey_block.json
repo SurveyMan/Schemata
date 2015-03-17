@@ -19,7 +19,7 @@
             "description" : "The list of questions belonging to this block",
             "type" : "array",
             "items" : {
-                "$ref" : "http://surveyman.github.io/Schemata/survey_question.json#question"
+                "$ref" : "http://surveyman.github.io/Schemata/survey_question.json"
             }
         },
         "randomize" : {"type" : "boolean"}
