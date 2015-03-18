@@ -23,5 +23,6 @@
             }
         },
         "randomize" : {"type" : "boolean"}
-    }
+    },
+    "required" : ["id"]
 }
