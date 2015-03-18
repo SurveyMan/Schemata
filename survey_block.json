@@ -12,7 +12,7 @@
             "description" : "The list of blocks whose parent is this block",
             "type" : "array",
             "items" : {
-                "$ref" : "#block"
+                "$ref" : "#"
             }
         },
         "questions" : {
