@@ -1,0 +1,32 @@
+/**
+ * Created by etosch on 2/12/15.
+ */
+
+{
+    "$schema" : "http://json-schema.org/schema#",
+    "description" : "Holds breakoff data. This is just an array with ",
+    "type" : "array",
+    "id" : "#breakoff_position",
+    "properties" : {
+        "id" : {
+            "description" : "The id generated for this block by the source program",
+            "type" : "string"
+        },
+        "subblocks" : {
+            "description" : "The list of blocks whose parent is this block",
+            "type" : "array",
+            "items" : {
+                "$ref" : "#"
+            }
+        },
+        "questions" : {
+            "description" : "The list of questions belonging to this block",
+            "type" : "array",
+            "items" : {
+                "$ref" : "http://surveyman.github.io/Schemata/survey_question.json"
+            }
+        },
+        "randomize" : {"type" : "boolean"}
+    },
+    "required" : ["id"]
+}
