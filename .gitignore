@@ -1,3 +1,11 @@
 npm*
-
 .idea
+~$
+.*~
+local/.*~
+local/.*.json~
+local/breakoff_position.json~
+local/survey_block.json~
+local/survey_input.json~
+local/survey_output.json~
+local/survey_question.json~
