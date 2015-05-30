@@ -76,21 +76,22 @@
 				                }
 				            },
 				                "freetext" : {
-				                "description" : "The freetext object can be a boolean value or a string representing the default value, or a regex",
-				                "oneOf" : [
-					                { "type" : "boolean"},
-					                { "type" : "string"}
-				                ]
-				            },
+                                    "description" : "The freetext object can be a boolean value or a string representing the default value, or a regex",
+    				                "oneOf" : [
+	    				                { "type" : "boolean"},
+		    			                { "type" : "string"}
+			    	                ]
+				                },
                                 "answer" : {
 				                    "type" : "string",
 				                    "description" : "The id of the correct answer for this question. It should be a valid Option Id present in the options properties."
 				                },
                                 "randomize" : { "type" : "boolean" },
                                 "ordered" : {
+                                    "description" : "If a question's answer options are ordered (e.g., it's a Likert-scale question), then ordering over the option identifiers must be provided.",
                                     "oneOf" : [
                                         { "type" : "boolean" },
-                                        { "type" : "array", "items" : "string" }
+                                        { "type" : "array", "items" : { "type" : "string" }}
                                     ]
 				                },
                                 "exclusive" : { "type" : "boolean" },
