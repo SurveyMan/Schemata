@@ -49,21 +49,21 @@
 				                "type" : "string"
 				            },
             				    "options" : {
-				                "description" : "The list of options associated with this question",
-				                "type" : "array",
-				                "items" : {
-					                "id" : "#option",
-					                "description" : "The option JSON.",
-					                "type" : "object",
-					                "properties" : {
+    				                "description" : "The list of options associated with this question",
+    				                "type" : "array",
+	    			                "items" : {
+		    			                "id" : "#option",
+			    		                "description" : "The option JSON.",
+				    	                "type" : "object",
+					                    "properties" : {
 					                    "id" : {
     						                "description" : "The id generated for this option from the source file (for files loaded from csv, this will be `comp_x_y`, where x refers to the row and y refers to the columm",
 	                    					"type" : "string"
 					                    },
 					                    "otext" : { "type" : "string" }
 					                }
-				                }
-				            },
+				                    }
+				                },
 				                "branchMap" : {
 				                "description" : "Map from option id to block id (i.e. string to string)",
 				                "type" : "object",
@@ -90,8 +90,8 @@
                                 "ordered" : {
                                     "description" : "If a question's answer options are ordered (e.g., it's a Likert-scale question), then ordering over the option identifiers must be provided.",
                                     "oneOf" : [
-                                        { "type" : "boolean" },
-                                        { "type" : "array", "items" : { "type" : "string" }}
+                                            { "type" : "boolean" },
+                                            { "type" : "array", "items" : { "type" : "string" }}
                                     ]
 				                },
                                 "exclusive" : { "type" : "boolean" },

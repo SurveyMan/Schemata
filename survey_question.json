@@ -36,9 +36,8 @@
         "randomize" : { "type" : "boolean" },
         "ordered" : {
 	    "oneOf" : [
-		{ "type" : "boolean" },
-		{ "type" : "array",
-		  "items" : "string" }
+    		{ "type" : "boolean" },
+	    	{ "type" : "array", "items" : { "type" : "string" }}
 	    ]
 	},
         "exclusive" : { "type" : "boolean" },
