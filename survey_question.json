@@ -34,11 +34,17 @@
             "description" : "The id of the correct answer for this question. It should be a valid Option Id present in the options properties."
         },
         "randomize" : { "type" : "boolean" },
+        "correlation" : {
+            "oneOf" : [
+                {"type" : "string"},
+                {"type" : "array", "items" : {"type" : "string"}}
+            ]
+        },
         "ordered" : {
-	    "oneOf" : [
-    		{ "type" : "boolean" },
-	    	{ "type" : "array", "items" : { "type" : "string" }}
-	    ]
+            "oneOf" : [
+                { "type" : "boolean" },
+                { "type" : "array", "items" : { "type" : "string" }}
+            ]
 	},
         "exclusive" : { "type" : "boolean" },
         "permitBreakoff" : { "type" : "boolean"}
