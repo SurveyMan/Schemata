@@ -5,6 +5,9 @@
     "title" : "JSON schema for SurveyMan output",
     "description" : "This is the schema to be passed between a library or runtime system to the survey host. The JSON object will be interpreteed by the SurveyMan JS library",
     "properties" : {
+        "id" :{
+            "type" : "string"
+        }
         "filename" : {
             "description" : "The source file used to generate this survey. This string is a convenience for retreiving and parsing survey data.",
             "type" : "string"
