@@ -7,7 +7,7 @@
     "properties" : {
         "id" :{
             "type" : "string"
-        }
+        },
         "filename" : {
             "description" : "The source file used to generate this survey. This string is a convenience for retreiving and parsing survey data.",
             "type" : "string"
