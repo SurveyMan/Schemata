@@ -2,7 +2,7 @@
     "$schema" : "http://json-schema.org/schema#",
     "description" : "Map from option id to block id (i.e. string to string)",
     "type" : "object",
-    "id" : "#branchMap",
+    "id" : "survey_branchMap.json",
     "patternProperties" : {
         "^comp_[0-9]+_[0-9]+" : {
             "type" : ["string", "null"],

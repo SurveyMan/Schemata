@@ -1,14 +1,14 @@
 {
     "$schema" : "http://json-schema.org/schema#",
     "type" : "object",
-    "id" : "#survey_input",
+    "id" : "survey_input.json",
     "title" : "JSON schema for SurveyMan input",
     "properties" : {
         "survey" : {
             "description" : "The survey object",
             "type" : "array",
             "items" : {
-                "$ref" : "http://surveyman.github.io/Schemata/survey_block.json"
+                "$ref" : "survey_block.json"
             }
         },
         "correlation" : {

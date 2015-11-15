@@ -2,7 +2,7 @@
     "$schema" : "http://json-schema.org/schema#",
     "description" : "The question JSON.",
     "type" : "object",
-    "id" : "#question",
+    "id" : "survey_question.json",
     "properties" : {
         "id" : {
             "description" : "The id generated for this question from the source file (for files loaded from csv, this will be q_x_y, where x refers to the row and y refers to the column",
@@ -16,11 +16,11 @@
             "description" : "The list of options associated with this question",
             "type" : "array",
             "items" : {
-                "$ref" : "http://surveyman.github.io/Schemata/survey_option.json"
+                "$ref" : "survey_option.json"
             }
         },
         "branchMap" : {
-            "$ref" : "http://surveyman.github.io/Schemata/survey_branchMap.json"
+            "$ref" : "survey_branchMap.json"
         },
         "freetext" : {
             "description" : "The freetext object can be a boolean value or a string representing the default value, or a regex",

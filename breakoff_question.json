@@ -1,10 +1,10 @@
 {
   "$schema" : "http://json-schema.org/schema#",
-  "description" : "Holds breakoff data. ",
+  "description" : "Holds breakoff data.",
   "type" : "object",
-  "id" : "breakoff_position.json",
+  "id" : "breakoff_question.json",
   "patternProperties" : {
-    "[0-9]+" : { "type" : "number" }
+    "[0-9]+" : { "$ref" : "survey_question.json" }
   },
   "additionalProperties" : false
 }

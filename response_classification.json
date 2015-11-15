@@ -1,0 +1,18 @@
+{
+  "$schema" : "http://json-schema.org/schema#",
+  "description" : "Holds response classification data.",
+  "type" : "object",
+  "id" : "response_classification.json",
+  "properties" : {
+    "responseid" : { "type" : "string" },
+    "classifier" : {
+      "type" : "string",
+      "enum" : [ "ALL", "LOG_LIKELIHOOD", "ENTROPY", "LPO", "CLUSTER", "STACKED", "MAHALANOBIS", "LINEAR", "NIPS2010" ]
+    },
+    "numanswered" : { "type" : "number" },
+    "score" : { "type" : "number" },
+    "threshold" : { "type" : "number" },
+    "valid" : { "type" : "boolean" }
+  },
+  "additionalProperties" : false
+}

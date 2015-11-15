@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/schema#",
+  "description": "Holds comparison data between two things.",
+  "type": "object",
+  "id": "coefficient.json",
+  "properties": {
+    "coefficientType": {
+      "type": "string",
+      "enum": [
+        "V",
+        "RHO",
+        "U",
+        "CHI"
+      ]
+    },
+    "coefficientValue": {
+      "type": "number"
+    },
+    "coefficientPValue": {
+      "type": "number"
+    }
+  },
+  "patternProperties" : {
+    ".*" : { "type"  : "number" },
+    ".*" : { "type" : "number"}
+  }
+}
