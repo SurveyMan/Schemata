@@ -1,7 +1,7 @@
 {
     "$schema" : "http://json-schema.org/schema#",
     "type" : "object",
-    "id" : "survey_input.json",
+    "id" : "http://surveyman.github.io/Schemata/survey_input.json#",
     "title" : "JSON schema for SurveyMan input",
     "properties" : {
         "survey" : {
