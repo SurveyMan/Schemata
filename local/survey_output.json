@@ -1,110 +1,169 @@
 {
-    "$schema" : "http://json-schema.org/schema#",
-    "id" : "#survey",
-    "type" : "object",
-    "title" : "JSON schema for SurveyMan output",
-    "description" : "This is the schema to be passed between a library or runtime system to the survey host. The JSON object will be interpreteed by the SurveyMan JS library",
-    "properties" : {
-        "filename" : {
-            "description" : "The source file used to generate this survey. This string is a convenience for retreiving and parsing survey data.",
-            "type" : "string"
-        },
-        "breakoff" : {
-            "description" : "Indicates whether breakoff is permitted in this survey at any point. This will trigger a notice about allowing breakoff.",
-            "type" : "boolean"
-        },
-        "survey" : {
-            "description" : "The survey content. This essentially an array of blocks",
-            "type" : "array",
-            "items" : {
-                "description" : "The block JSON.",
-        		"type" : "object",
-		        "id" : "#block",
-		        "properties" : {
-		            "id" : {
-                        "description" : "The id generated for this block by the source program",
-			            "type" : "string"
-                        },
-                    "subblocks" : {
-                        "description" : "The list of blocks whose parent is this block",
-			            "type" : "array",
-			            "items" : {
-			                "$ref" : "#block"
-            			}
-		            },
-        		    "questions" : {
-			            "description" : "The list of questions belonging to this block",
-			            "type" : "array",
-			            "items" : {
-			                "description" : "The question JSON.",
-  			                "type" : "object",
-			                "id" : "#question",
-			                "properties" : {
-				                "id" : {
-				                "description" : "The id generated for this question from the source file (for files loaded from csv, this will be q_x_y, where x refers to the row and y refers to the column",
-				                "type" : "string"
-				            },
-				                "qtext" : {
-				                "description" : "The text of the question to be displayed",
-				                "type" : "string"
-				            },
-            				    "options" : {
-    				                "description" : "The list of options associated with this question",
-    				                "type" : "array",
-	    			                "items" : {
-		    			                "id" : "#option",
-			    		                "description" : "The option JSON.",
-				    	                "type" : "object",
-					                    "properties" : {
-					                    "id" : {
-    						                "description" : "The id generated for this option from the source file (for files loaded from csv, this will be `comp_x_y`, where x refers to the row and y refers to the columm",
-	                    					"type" : "string"
-					                    },
-					                    "otext" : { "type" : "string" }
-					                }
-				                    }
-				                },
-				                "branchMap" : {
-				                "description" : "Map from option id to block id (i.e. string to string)",
-				                "type" : "object",
-				                "id" : "#branchMap",
-				                "patternProperties" : {
-					                "^data_[0-9]+_[0-9]+" : {
-					                "type" : ["string", "null"],
-					                "pattern" : "[1-9]+[0-9]*(\\.(_?|[a-z]?)[1-9]+[0-9]*)*"
-					            }
-				                }
-				            },
-				                "freetext" : {
-                                    "description" : "The freetext object can be a boolean value or a string representing the default value, or a regex",
-    				                "oneOf" : [
-	    				                { "type" : "boolean"},
-		    			                { "type" : "string"}
-			    	                ]
-				                },
-                                "answer" : {
-				                    "type" : "string",
-				                    "description" : "The id of the correct answer for this question. It should be a valid Option Id present in the options properties."
-				                },
-                                "randomize" : { "type" : "boolean" },
-                                "ordered" : {
-                                    "description" : "If a question's answer options are ordered (e.g., it's a Likert-scale question), then ordering over the option identifiers must be provided.",
-                                    "oneOf" : [
-                                            { "type" : "boolean" },
-                                            { "type" : "array", "items" : { "type" : "string" }}
-                                    ]
-				                },
-                                "exclusive" : { "type" : "boolean" },
-				                "permitBreakoff" : { "type" : "boolean"}
-			                },
-                            "required" : ["id", "qtext"]
-                        }
-                    },
-                    "randomize" : {"type" : "boolean"}
-                },
-                "required" : ["id"]
-            }
-        }
+  "$schema": "http://json-schema.org/schema#",
+  "id": "http://surveyman.github.io/Schemata/survey_output.json#",
+  "type": "object",
+  "title": "JSON schema for SurveyMan output",
+  "description": "This is the schema to be passed between a library or runtime system to the survey host. The JSON object will be interpreteed by the SurveyMan JS library",
+  "properties": {
+    "id": {
+      "type": "string"
     },
-    "required" : ["survey", "filename"]
+    "filename": {
+      "description": "The source file used to generate this survey. This string is a convenience for retreiving and parsing survey data.",
+      "type": "string"
+    },
+    "breakoff": {
+      "description": "Indicates whether breakoff is permitted in this survey at any point. This will trigger a notice about allowing breakoff.",
+      "type": "boolean"
+    },
+    "survey": {
+      "description": "The survey content. This essentially an array of blocks",
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/block"
+      }
+    }
+  },
+  "required": [
+    "survey",
+    "filename"
+  ],
+  "definitions": {
+    "block": {
+      "description": "The block JSON.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The id generated for this block by the source program",
+          "type": "string"
+        },
+        "subblocks": {
+          "description": "The list of blocks whose parent is this block",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/block"
+          }
+        },
+        "questions": {
+          "description": "The list of questions belonging to this block",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/question"
+          }
+        },
+        "randomize": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id"
+      ]
+    },
+    "question": {
+      "description": "The question JSON.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The id generated for this question from the source file (for files loaded from csv, this will be q_x_y, where x refers to the row and y refers to the column",
+          "type": "string"
+        },
+        "qtext": {
+          "description": "The text of the question to be displayed",
+          "type": "string"
+        },
+        "options": {
+          "description": "The list of options associated with this question",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/option"
+          }
+        },
+        "branchMap": {
+          "$ref": "#/definitions/branchMap"
+        },
+        "freetext": {
+          "description": "The freetext object can be a boolean value or a string representing the default value, or a regex",
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "string"
+            }
+          ]
+        },
+        "answer": {
+          "type": "string",
+          "description": "The id of the correct answer for this question. It should be a valid Option Id present in the options properties."
+        },
+        "randomize": {
+          "type": "boolean"
+        },
+        "correlation": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "ordered": {
+          "oneOf": [
+            {
+              "type": "boolean"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          ]
+        },
+        "exclusive": {
+          "type": "boolean"
+        },
+        "permitBreakoff": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "qtext"
+      ]
+    },
+    "option": {
+      "description": "The option JSON.",
+      "type": "object",
+      "properties": {
+        "id": {
+          "description": "The id generated for this option from the source file (for files loaded from csv, this will be `comp_x_y`, where x refers to the row and y refers to the columm",
+          "type": "string"
+        },
+        "otext": {
+          "type": "string"
+        }
+      }
+    },
+    "branchMap": {
+      "description": "Map from option id to block id (i.e. string to string)",
+      "type": "object",
+      "patternProperties": {
+        "^comp_[0-9]+_[0-9]+": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "pattern": "[1-9]+[0-9]*(\\.(_?|[a-z]?)[1-9]+[0-9]*)*"
+        }
+      }
+    }
+  }
 }
+
+
