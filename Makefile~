@@ -1,7 +1,0 @@
-PHONY: test install clean
-
-deps:
-	pip install jsonschema
-
-test: deps
-	python -m unittest tests.schemata_test
