@@ -1,6 +1,8 @@
 sudo:
   required
 
+install: "pip install jsonschema"
+
 branches:
   only:
     - gh-pages
@@ -13,4 +15,4 @@ python:
 virtualenv:
   system_site_packages: true
 
-script: make test
+script: python -m unittest tests.schemata_test
