@@ -1,2 +1,2 @@
-[![Build Status](https://travis-ci.org/SurveyMan/Schemata.png?branch=master)](https://travis-ci.org/SurveyMan/Schemata)
+[![Build Status](https://travis-ci.org/SurveyMan/Schemata.svg?branch=gh-pages)](https://travis-ci.org/SurveyMan/Schemata)
 
